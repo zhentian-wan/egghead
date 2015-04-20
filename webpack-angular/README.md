@@ -37,15 +37,16 @@
   ```
 
 5. In directives dir, load home directive in index.js
- directives\indx.js
 
+ directives\indx.js
  ```
  module.exports = function(ngModule) {
     require('./home')(ngModule);
  };
  ```
 
-directive\home.js
+
+ directive\home.js
  ```
 module.exports = function(ngModule) {
     ngModule.directive('newHome', function() {
