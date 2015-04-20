@@ -27,8 +27,8 @@
   
   
 4. Using CommonJS way to load angular
+
   app\index.js
-  
   ```
   var angular = require('angular');
   var ngModule = angular.module('app', []);
