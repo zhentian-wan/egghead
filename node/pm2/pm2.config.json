@@ -1,9 +1,0 @@
-{
-  "apps": [{
-    "name": "App1",
-    "script": "app1/server.js"
-  },{
-    "name": "App2",
-    "script": "app2/server.js"
-  }]
-}
