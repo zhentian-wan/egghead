@@ -105,3 +105,26 @@ console.log("Listen on port 3001");
 More:
 * [egghead](https://egghead.io/lessons/node-js-using-pm2-to-keep-your-node-apps-alive)
 * [Github](https://github.com/eggheadio/simple_server)
+
+
+## Loggin with PM2
+Add config for app's log and error log for PM2.
+```
+{
+  "apps": [{
+    "name": "App1",
+    "script": "app1/server.js",
+    "log_file": "log/app1.log",
+    "error_file": "log/app1-err.log"
+  },{
+    "name": "App2",
+    "script": "app2/server.js",
+    "log_file": "log/app2.log",
+    "error_file": "log/app2-err.log"
+  }]
+}
+```
+
+If on Linux & Mac, you might want to enable 'node' user's permission for writing logs.
+
+![](./images/6.png)
