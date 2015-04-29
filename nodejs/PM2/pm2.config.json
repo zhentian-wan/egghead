@@ -3,7 +3,9 @@
     "name": "App1",
     "script": "app1/server.js",
     "log_file": "log/app1.log",
-    "error_file": "log/app1-err.log"
+    "error_file": "log/app1-err.log",
+    "watch": true,
+    "ignore_watch": ["file"]
   },{
     "name": "App2",
     "script": "app2/server.js",

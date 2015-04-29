@@ -128,3 +128,33 @@ Add config for app's log and error log for PM2.
 If on Linux & Mac, you might want to enable 'node' user's permission for writing logs.
 
 ![](./images/6.png)
+
+##Restarting your node.js app on code change using pm2
+
+Add watch to the config.json file:
+```
+{
+  "apps": [{
+    "name": "App1",
+    "script": "app1/server.js",
+    "log_file": "log/app1.log",
+    "error_file": "log/app1-err.log",
+    "watch": true,
+    "ignore_watch": ["file"]  //inside app1 folder
+  },{
+    "name": "App2",
+    "script": "app2/server.js",
+    "log_file": "log/app2.log",
+    "error_file": "log/app2-err.log"
+  }]
+}
+```
+![](./images/7.png)
+
+After change app1/server.js, run 
+
+	pm2 list
+	
+You can see App1's pid is changed, but App2 is not. Because we enable the watch on App1 not on App2.
+
+
