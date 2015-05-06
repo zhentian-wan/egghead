@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Each of these scripts are the latest version of the library at the time this jsbin was created -->
+
+    <!-- Twitter bootstrap -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <!-- api-check is a dependency of angular-formly -->
+    <script src="../bower_components/api-check/dist/apiCheck.min.js"></script>
+
+    <!-- angular.js is a dependency of angular-formly (obviously) -->
+    <script src="../bower_components/angular/angular.min.js"></script>
+
+    <!-- This is angular-formly -->
+    <script src="../bower_components/angular-formly/dist/formly.min.js"></script>
+
+    <!-- This is a bootstrap template libraray giving us some pre-defined types for bootstrap -->
+    <script src="//rawgit.com/formly-js/angular-formly-templates-bootstrap/4.0.3/dist/angular-formly-templates-bootstrap.js"></script>
+
+    <title>Angular Formly Lesson</title>
+</head>
+
+<body ng-app="formlyExample" ng-controller="MainCtrl as vm">
+<div>
+    <h1>
+        angular-formly: Control show hide by expressionProperties<br/>
+    </h1>
+
+    <div class="row">
+        <form name="vm.form" class="col-md-4" novalidate>
+            <formly-form model="vm.model" fields="vm.fields">
+                <button class="btn btn-primary" ng-disabled="vm.form.$invalid">Submit</button>
+            </formly-form>
+        </form>
+        <div class="col-md-2">
+            <h2>Model</h2>
+            <pre>{{vm.model | json}}</pre>
+        </div>
+        <div class="col-md-6">
+            <h2>Code</h2>
+            <pre>
+ng-disabled="vm.form.$invalid"
+
+(function() {
+
+    'use strict';
+
+    var app = angular.module('formlyExample', ['formly', 'formlyBootstrap']);
+
+    app.controller('MainCtrl', function MainCtrl() {
+        var vm = this;
+        vm.model = {};
+        vm.fields = [
+            {
+                type: 'input',
+                key: "firstName",
+                templateOptions: {
+                    label: 'Enter your first name',
+                    required: true
+                },
+                expressionProperties: {
+                    'templateOptions.disable': function($viewValue, $modelValue, scope) {
+                        return !scope.model.firstName;
+                    }
+                }
+            }
+        ];
+    });
+
+})();
+            </pre>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
