@@ -29,8 +29,8 @@
 
     <div class="row">
         <form name="vm.form" class="col-md-4" novalidate>
-            <formly-form model="vm.model" fields="vm.fields">
-                <button class="btn btn-primary" ng-disabled="vm.form.$invalid">Submit</button>
+            <formly-form model="vm.model" fields="vm.fields" options="vm.options">
+                <button class="btn btn-primary" ng-disabled="vm.form.$invalid" >Submit</button>
             </formly-form>
         </form>
         <div class="col-md-2">

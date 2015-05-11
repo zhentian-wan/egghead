@@ -14,6 +14,11 @@
     app.controller('MainCtrl', function MainCtrl() {
         var vm = this;
         vm.model = {};
+        vm.options= {
+            formState: {
+                foo: 'bar'
+            }
+        }
         vm.fields = [
             {
                 type: 'input',
