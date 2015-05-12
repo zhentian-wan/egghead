@@ -4,3 +4,5 @@
 * [disable](./disable)
 * [custom template](./customtype)
 * [Validators](./validator)
+* [templateOptions]()
+* [defultOptios]()
