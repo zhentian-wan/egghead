@@ -6,3 +6,4 @@
 * [Validators](./validator)
 * [templateOptions](./templateOptions)
 * [defaultOptions](./defaultOptions)
+* [extendsType](./extendsType)
